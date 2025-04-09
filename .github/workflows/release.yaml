@@ -86,6 +86,9 @@ jobs:
       - name: Update ${{ matrix.repository }} locally
         working-directory: ${{ github.workspace }}/src/github.com/bszirtes/${{ matrix.repository }}
         run: |
+          cd suites/afxdp
+          pwd
+          cd -
           ls -R
           go generate ./...
           go mod tidy
